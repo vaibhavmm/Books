@@ -1,0 +1,12 @@
+spring:
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    user: postgres
+    baselineOnMigrate: true
+  datasource:
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
