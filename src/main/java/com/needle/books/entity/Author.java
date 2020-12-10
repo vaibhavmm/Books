@@ -31,4 +31,10 @@ public class Author {
     private List<Book> books;
     @CreationTimestamp
     private Date timestamp;
+
+    public Author(String firstName, String middleName, String lastName) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+    }
 }

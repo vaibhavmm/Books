@@ -28,10 +28,18 @@ public class Book {
     private List<Author> authors;
     private String genre;
     @Column(name = "publisher_name")
-    private long publisherName;
+    private String publisherName;
     @Column(name = "total_pages")
     private int totalPages;
     @CreationTimestamp
     private Date timestamp;
 
+    public Book(String serialNo, String name, List<Author> authors, String genre, String publisherName, int totalPages) {
+        this.serialNo = serialNo;
+        this.name = name;
+        this.authors = authors;
+        this.genre = genre;
+        this.publisherName = publisherName;
+        this.totalPages = totalPages;
+    }
 }
