@@ -1,0 +1,16 @@
+{
+  "id": 1,
+  "serialNo": "ISBN-978-91-7599",
+  "name": "How to Win Friends & Influence People",
+  "authors": [
+    {
+      "id": 1,
+      "firstName": "Dale",
+      "middleName": "Francis",
+      "lastName": "Carnegie"
+    }
+  ],
+  "genre": "Motivational",
+  "publisherName": "FingerPrint Pubishing",
+  "totalPages": 312
+}

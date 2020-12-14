@@ -28,23 +28,25 @@ public class BooksService {
     public void deleteBook(long id) throws Exception {
         if(repository.findById(id).isPresent()){
             repository.deleteById(id);
-        }else{
-            throw new Exception("No such book found");
         }
     }
 
     public List<Book> getAllBooks(int limit, int offset) throws Exception {
-        if(limit == 0) throw new Exception("Limit cannot be zero");
-        List<Book> books = repository.findAll(PageRequest.of(offset/limit,limit)).getContent();
+        if(limit == 0 ) return null;
+        List<Book> books = repository.findAll(PageRequest.of((offset/limit),limit)).getContent();
         if(books.isEmpty()){
-            throw new Exception("Books Database is empty");
+            return null;
         }
         return books;
     }
 
     @Transactional
     public Book updateBook(Book book) throws Exception {
-        deleteBook(book.getId());
-        return repository.save(book);
+        if(repository.findById(book.getId()).isPresent()){
+            deleteBook(book.getId());
+            return repository.save(book);
+        }else{
+            return null;
+        }
     }
 }

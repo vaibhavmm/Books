@@ -1,4 +1,5 @@
 com/needle/books/BooksApplicationTests.java
  com.needle.books.BooksApplicationTests
-com/needle/books/BooksControllerIntegrationTest.java
- com.needle.books.BooksControllerIntegrationTest
+com/needle/books/controller/BooksControllerIntegrationTest.java
+ com.needle.books.controller.BooksControllerIntegrationTest
+ com.needle.books.controller.BooksControllerIntegrationTest$1

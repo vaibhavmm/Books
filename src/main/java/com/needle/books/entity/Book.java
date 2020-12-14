@@ -1,9 +1,7 @@
 package com.needle.books.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -14,16 +12,16 @@ import java.util.List;
 @Table(name = "books")
 @Getter
 @Setter
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "serial_no")
     private String serialNo;
     private String name;
-    @ManyToMany(targetEntity = Author.class,cascade = CascadeType.ALL)
+    @ManyToMany(targetEntity = Author.class,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(name = "books_and_authors",joinColumns = @JoinColumn(name = "book_id"),inverseJoinColumns = @JoinColumn(name = "author_id"))
     private List<Author> authors;
     private String genre;
@@ -32,9 +30,11 @@ public class Book {
     @Column(name = "total_pages")
     private int totalPages;
     @CreationTimestamp
+    @JsonIgnore
     private Date timestamp;
 
-    public Book(String serialNo, String name, List<Author> authors, String genre, String publisherName, int totalPages) {
+    public Book(long id,String serialNo, String name, List<Author> authors, String genre, String publisherName, int totalPages) {
+       this.id = id;
         this.serialNo = serialNo;
         this.name = name;
         this.authors = authors;
