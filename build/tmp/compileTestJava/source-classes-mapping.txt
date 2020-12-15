@@ -1,0 +1,7 @@
+com/needle/books/service/BooksServiceUnitTests.java
+ com.needle.books.service.BooksServiceUnitTests
+com/needle/books/controller/BooksControllerIntegrationTest.java
+ com.needle.books.controller.BooksControllerIntegrationTest
+ com.needle.books.controller.BooksControllerIntegrationTest$1
+com/needle/books/BooksApplicationTests.java
+ com.needle.books.BooksApplicationTests

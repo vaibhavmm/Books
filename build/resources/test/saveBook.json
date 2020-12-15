@@ -1,0 +1,14 @@
+{
+  "id" : 3,
+  "serialNo" : "ISBN-978-91-7564",
+  "name" : "Think and Grow Rich",
+  "genre" : "Non-fiction",
+  "publisherName" : "FingerPrint Publishing",
+  "totalPages" : 271,
+  "authors" : [{
+    "id" : 3,
+    "firstName" : "Napolean",
+    "middleName" : "",
+    "lastName" : "Hill"
+  }]
+}
