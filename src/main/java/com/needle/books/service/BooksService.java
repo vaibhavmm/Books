@@ -17,7 +17,10 @@ public class BooksService {
 
     @Transactional
     public Book saveBook(Book book) {
-        return repository.save(book);
+        if(!repository.existsById(book.getId())){
+            return repository.save(book);
+        }
+        return null;
     }
 
     public Book getBook(long id) {
@@ -26,7 +29,7 @@ public class BooksService {
 
     @Transactional
     public void deleteBook(long id) throws Exception {
-        if(repository.findById(id).isPresent()){
+        if(repository.existsById(id)){
             repository.deleteById(id);
         }
     }
@@ -42,7 +45,7 @@ public class BooksService {
 
     @Transactional
     public Book updateBook(Book book) throws Exception {
-        if(repository.findById(book.getId()).isPresent()){
+        if(repository.existsById(book.getId())){
             deleteBook(book.getId());
             return repository.save(book);
         }else{

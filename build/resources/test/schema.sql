@@ -21,7 +21,7 @@ author_id INT
 );
 DELETE FROM books WHERE id =1;
 INSERT INTO books(id,serial_no,name,genre,publisher_name,total_pages,timestamp)
-values (1,'ISBN-978-91-7599','How to Win Friends & Influence People','Motivational','FingerPrint Pubishing',278,now());
+values (1,'ISBN-978-91-7599','How to Win Friends & Influence People','Motivational','FingerPrint Publishing',278,now());
 DELETE FROM authors WHERE id =1;
 INSERT INTO authors(id,first_name,middle_name,last_name,timestamp) values(1,'Dale','','Carnegie',now());
 DELETE FROM books_and_authors WHERE book_id =1 AND author_id =1;
